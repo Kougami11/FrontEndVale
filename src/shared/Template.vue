@@ -10,5 +10,10 @@ import SecondSidebar from './SecondSidebar.vue';
     <div class="page-wrapper">
         <Header></Header>
         <SecondSidebar></SecondSidebar>
+        <div class="body-wrapper">
+            <div class="container-fluid">
+                <slot></slot>
+            </div>
+        </div>
     </div>
 </template>

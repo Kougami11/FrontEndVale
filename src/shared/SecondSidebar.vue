@@ -29,19 +29,25 @@
               <span>
                 <i class="ti ti-menu"></i>
               </span>
-              <span class="hide-menu">Opciones</span>
+              <span class="hide-menu">Vales</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
               <li class="sidebar-item">
                 <a href="../dark/index.html" class="sidebar-link">
                   <i class="ti ti-aperture"></i>
-                  <span class="hide-menu">[Menu 1]</span>
+                  <span class="hide-menu">Listado</span>
                 </a>
               </li>
               <li class="sidebar-item">
-                <a href="../dark/index2.html" class="sidebar-link active">
+                <a href="../dark/index2.html" class="sidebar-link">
                   <i class="ti ti-shopping-cart"></i>
-                  <span class="hide-menu">[Menu 2]</span>
+                  <span class="hide-menu">Registrar</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="../dark/index2.html" class="sidebar-link">
+                  <i class="ti ti-shopping-cart"></i>
+                  <span class="hide-menu">Historico</span>
                 </a>
               </li>
             </ul>

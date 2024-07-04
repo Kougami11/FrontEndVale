@@ -1,11 +1,44 @@
 <script setup>
 import store from '@/store'
 import router from '@/router'
+import { onMounted } from 'vue';
 
 function logOut() {
   store.dispatch('auth/logout')
   router.push('login')
 }
+onMounted(() => {
+
+
+function handleSidebar() {
+    document.querySelectorAll(".sidebartoggler").forEach(function (element) {
+        element.addEventListener("click", function () {
+            document.querySelectorAll(".sidebartoggler").forEach(function (el) {
+                el.checked = true;
+            });
+            document
+                .getElementById("main-wrapper")
+                .classList.toggle("show-sidebar");
+            document.querySelectorAll(".sidebarmenu").forEach(function (el) {
+                el.classList.toggle("close");
+            });
+            var dataTheme = document.body.getAttribute("data-sidebartype");
+            if (dataTheme === "full") {
+                document.getElementById("lt").style.display = "none";
+                document.getElementById("dk").style.display = "inline";
+                document.body.setAttribute("data-sidebartype", "mini-sidebar");
+            } else {
+                document.getElementById("dk").style.display = "none";
+                setTimeout(function () {
+                    document.getElementById("lt").style.display = "inline";
+                }, 120);
+                document.body.setAttribute("data-sidebartype", "full");
+            }
+        });
+    });
+}
+handleSidebar()
+});
 </script>
 <template>
   <header class="topbar">
@@ -20,39 +53,25 @@ function logOut() {
               <i class="ti ti-menu-2"></i>
             </a>
           </li>
-          <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex">
-            <a
-              class="nav-link"
-              href="javascript:void(0)"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              <i class="ti ti-search"></i>
-            </a>
-          </li>
         </ul>
-
         <ul class="navbar-nav quick-links d-none d-lg-flex align-items-center">
           <li class="nav-item dropdown-hover d-none d-lg-block">
-            <a class="nav-link" href="../dark/app-chat.html">Chat</a>
+            <a class="nav-link" href="">Vales</a>
           </li>
           <li class="nav-item dropdown-hover d-none d-lg-block">
-            <a class="nav-link" href="../dark/app-calendar.html">Calendar</a>
-          </li>
-          <li class="nav-item dropdown-hover d-none d-lg-block">
-            <a class="nav-link" href="../dark/app-email.html">Email</a>
+            <a class="nav-link" href="">Registrar vales</a>
           </li>
         </ul>
 
         <div class="d-block d-lg-none py-4">
-          <a href="../dark/index.html" class="text-nowrap logo-img">
+          <a href="" class="text-nowrap logo-img">
             <img
-              src="/src/assets/images/logo.png"
+              src="/logo.png"
               class="dark-logo"
               alt="Logo-Dark"
               style="display: none"
             />
-            <img src="/src/assets/images/logo.png" class="light-logo" alt="Logo-light" />
+            <img src="/logo.png" class="light-logo" alt="Logo-light" />
           </a>
         </div>
         <a
@@ -79,6 +98,23 @@ function logOut() {
               <i class="ti ti-align-justified fs-7"></i>
             </a>
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+              <!-- ------------------------------- -->
+              <!-- start notification Dropdown -->
+              <!-- ------------------------------- -->
+              <li class="nav-item nav-icon-hover-bg rounded-circle dropdown">
+                <a
+                  class="nav-link position-relative"
+                  href="javascript:void(0)"
+                  id="drop2"
+                  aria-expanded="false"
+                >
+                  <i class="ti ti-bell-ringing"></i>
+                  <div class="notification bg-primary rounded-circle"></div>
+                </a>
+              </li>
+              <!-- ------------------------------- -->
+              <!-- end notification Dropdown -->
+              <!-- ------------------------------- -->
               <!-- ------------------------------- -->
               <!-- start profile Dropdown -->
               <!-- ------------------------------- -->
@@ -113,16 +149,16 @@ function logOut() {
                         alt="modernize-img"
                       />
                       <div class="ms-3">
-                        <h5 class="mb-1 fs-3">Mathew Anderson</h5>
-                        <span class="mb-1 d-block">Designer</span>
+                        <h5 class="mb-1 fs-3">[User Name]</h5>
+                        <span class="mb-1 d-block">[User Group - Role]</span>
                         <p class="mb-0 d-flex align-items-center gap-2">
                           <i class="ti ti-mail fs-4"></i>
-                          info@modernize.com
+                          [User Email]
                         </p>
                       </div>
                     </div>
                     <div class="d-grid py-4 px-7 pt-8">
-                      <a href="../dark/authentication-login.html" class="btn btn-outline-primary"
+                      <a href="" class="btn btn-outline-primary"
                         >Log Out</a
                       >
                     </div>
@@ -482,15 +518,15 @@ function logOut() {
         </ul>
         <ul class="navbar-nav quick-links d-none d-xl-flex align-items-center">
           <li class="nav-item dropdown-hover d-none d-lg-block">
-            <a class="nav-link" href="">[Shortcut 1]</a>
+            <a class="nav-link" href="">Vales</a>
           </li>
           <li class="nav-item dropdown-hover d-none d-lg-block">
-            <a class="nav-link" href="">[Shortcut 2]</a>
+            <a class="nav-link" href="">Registrar vale</a>
           </li>
         </ul>
         <div class="d-block d-xl-none">
-          <a href="../dark/index.html" class="text-nowrap nav-link">
-            <img src="../assets/images/logos/dark-logo.svg" width="180" alt="modernize-img" />
+          <a href="" class="text-nowrap nav-link">
+            <img src="/logo.png" width="180" alt="modernize-img" />
           </a>
         </div>
         <a

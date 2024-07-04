@@ -12,9 +12,9 @@ axios.defaults.baseURL = Constants.apiUrl // Default URL for Axios
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-const app = createApp(App)
-  
-app.use(router).use(store)
+const app = createApp(App) 
+app.use(router).use(store);
+
 router.beforeEach((To,From, next) => {
     NProgress.start()       
     next()    

@@ -36,7 +36,7 @@ function login() {
       invalidLogin.value = true
     })
 }
-
+console.log(store.state.auth.user)
 function handleLogin() {
   loading.value = true
   let data = new FormData()
