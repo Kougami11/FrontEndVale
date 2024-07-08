@@ -36,7 +36,7 @@ function login() {
       invalidLogin.value = true
     })
 }
-console.log(store.state.auth.user)
+console.log(store.state.auth)
 function handleLogin() {
   loading.value = true
   let data = new FormData()
@@ -71,57 +71,31 @@ function handleLogin() {
             </div>
           </div>
           <div class="col-xl-5 col-xxl-4">
-            <div
-              class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4"
-            >
+            <div class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
               <div class="auth-max-width col-sm-8 col-md-6 col-xl-7 px-4">
                 <h2 class="mb-1 fs-7 fw-bolder">[Welcome Message]</h2>
                 <p class="mb-7">[Admin Template] {{ Constants.apiUrl }}</p>
 
-                <div
-                  v-if="message"
-                  class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                  role="alert"
-                >
-                  <button
-                    type="button"
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="alert"
-                    aria-label="Close"
-                  ></button>
+                <div v-if="message" class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                  role="alert">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
                   <strong>Error - </strong> {{ message }}
                 </div>
                 <form v-on:submit.prevent="handleLogin">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">[Username]</label>
-                    <input
-                      type="text"
-                      v-model="user"
-                      class="form-control"
-                      id="user"
-                      aria-describedby="emailHelp"
-                      required="required"
-                    />
+                    <input type="text" v-model="user" class="form-control" id="user" aria-describedby="emailHelp"
+                      required="required" />
                   </div>
                   <div class="mb-4">
                     <label for="exampleInputPassword1" class="form-label">[Password]</label>
-                    <input
-                      type="password"
-                      v-model="pass"
-                      class="form-control"
-                      id="password"
-                      required="required"
-                    />
+                    <input type="password" v-model="pass" class="form-control" id="password" required="required" />
                   </div>
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <div class="form-check">
-                      <input
-                        class="form-check-input primary"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckChecked"
-                        checked=""
-                      />
+                      <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked"
+                        checked="" />
                       <label class="form-check-label text-dark fs-3" for="flexCheckChecked">
                         [Remeber this Device]
                       </label>
