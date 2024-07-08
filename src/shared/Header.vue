@@ -9,7 +9,7 @@ function logOut() {
 }
 onMounted(() => {
 
-
+console.log(store.state.auth.user)
 function handleSidebar() {
     document.querySelectorAll(".sidebartoggler").forEach(function (element) {
         element.addEventListener("click", function () {
@@ -138,7 +138,7 @@ handleSidebar()
                 >
                   <div class="profile-dropdown position-relative" data-simplebar="init">
                     <div class="py-3 px-7 pb-0">
-                      <h5 class="mb-0 fs-5 fw-semibold">User Profile</h5>
+                      <h5 class="mb-0 fs-5 fw-semibold">Perfil de usuario</h5>
                     </div>
                     <div class="d-flex align-items-center py-9 mx-7 border-bottom">
                       <img
@@ -149,11 +149,11 @@ handleSidebar()
                         alt="modernize-img"
                       />
                       <div class="ms-3">
-                        <h5 class="mb-1 fs-3">[User Name]</h5>
-                        <span class="mb-1 d-block">[User Group - Role]</span>
-                        <p class="mb-0 d-flex align-items-center gap-2">
+                        <h5 class="mb-1 fs-3">{{ $store.state.auth.user.username }}</h5>
+                        <span class="mb-1 d-block">{{ $store.state.auth.user.departamento }}</span>
+                        <p class="mb-0 text-dark text-truncate" style="max-width: 150px;">
                           <i class="ti ti-mail fs-4"></i>
-                          [User Email]
+                          {{ $store.state.auth.user.email }}qweqweqweqwe
                         </p>
                       </div>
                     </div>
@@ -596,7 +596,7 @@ handleSidebar()
                 >
                   <div class="profile-dropdown position-relative">
                     <div class="py-3 px-7 pb-0">
-                      <h5 class="mb-0 fs-5 fw-semibold">User Profile</h5>
+                      <h5 class="mb-0 fs-5 fw-semibold">Perfil de usuario</h5>
                     </div>
                     <div class="d-flex align-items-center py-9 mx-7 border-bottom">
                       <img
@@ -607,11 +607,11 @@ handleSidebar()
                         alt="modernize-img"
                       />
                       <div class="ms-3">
-                        <h5 class="mb-1 fs-3">[User Name]</h5>
-                        <span class="mb-1 d-block">[User Role - Group]</span>
-                        <p class="mb-0 d-flex align-items-center gap-2">
+                        <h5 class="mb-1 fs-3">{{ $store.state.auth.user.username }}</h5>
+                        <span class="mb-1 d-block">{{ $store.state.auth.user.departamento }}</span>
+                        <p class="mb-0 text-dark text-truncate" style="max-width: 150px;">
                           <i class="ti ti-mail fs-4"></i>
-                          [User Email]
+                          {{ $store.state.auth.user.email }}qweqweqweqwe
                         </p>
                       </div>
                     </div>

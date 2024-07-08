@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { jwtDecode } from 'jwt-decode'
 
+//TODO CLEAN SERVICE
+
 class AuthService {
   async login3(user) {
     const response = await axios.post('auth/token', user)
